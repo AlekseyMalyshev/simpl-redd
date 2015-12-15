@@ -11,6 +11,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: 'templates/threads.html',
       controller: 'ThreadsCtrl'
+    })
+    .state('thread', {
+      url: '/thread/:headId',
+      templateUrl: 'templates/thread.html',
+      controller: 'ThreadCtrl'
     });
 
 });

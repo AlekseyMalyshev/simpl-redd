@@ -1,0 +1,15 @@
+<div ng-init="init()" class="container">
+  <div class="row">
+    <div class="col-sm-12 threads" ng-repeat="post in threads">
+      <div class="title">{{post.title}}</div>
+      <div class="message">{{post.message}}</div>
+    </div>
+    <div class="col-sm-12 newthread">
+      <form action="#" ng-submit="newthread($event, title, message, post._id)">
+        <div><input type="text" class="title" ng-model="title" placeholder="Thread title"></div>
+        <div><textarea class="thread-msg" ng-model="message" rows="3"></textarea></div>
+        <input type="submit" name="" value="Post">
+      </form>
+    </div>
+  </div>
+</div>

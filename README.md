@@ -1,5 +1,6 @@
 Basic reddit clone
 ===
+[![Build Status via Travis CI](https://travis-ci.org/AlekseyMalyshev/simpl-redd.svg?branch=master)](https://travis-ci.org/AlekseyMalyshev/simpl-redd)
 
 This is a very basic implementation of reddit clone designed with Test Driven Develoment.
 
