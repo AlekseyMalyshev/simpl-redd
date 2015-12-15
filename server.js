@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 app.use(auth.auth);
 app.use(auth.enableCORS);
 app.use(express.static('public'));
+app.use(express.static('bower_components'));
 
 app.use('/api/users', users);
 app.use('/api/posts', posts);

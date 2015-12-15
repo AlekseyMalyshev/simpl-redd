@@ -86,23 +86,23 @@ describe('Post api', () => {
 
   // }
 
-  // after((done) => {
-  //   db.then((db) => {
-  //     db.collection('posts')
-  //       .drop()
-  //       .then((result) => {
-  //         //removeTestUser(done);
-  //         done();
-  //       })
-  //       .catch((err) => {
-  //         // It's OK, posts may not have been created
-  //         //removeTestUser(done);
-  //         done();
-  //       });
-  //   }).catch((err) => {
-  //     done(err);
-  //   });
-  // });
+  after((done) => {
+    db.then((db) => {
+      db.collection('posts')
+        .drop()
+        .then((result) => {
+          //removeTestUser(done);
+          done();
+        })
+        .catch((err) => {
+          // It's OK, posts may not have been created
+          //removeTestUser(done);
+          done();
+        });
+    }).catch((err) => {
+      done(err);
+    });
+  });
 
   describe('/', () => {
     it('should save a new post.', (done) => {

@@ -20,6 +20,9 @@ let checkError = (err, res, post) => {
 router.post('/', (req, res) => {
   console.log('New post:', req.body);
   let post = new Post(req.body);
+  if (!post.head) {
+    post.head = post._id;
+  }
   post.save((err, doc) => {
     checkError(err, res, doc);
   });

@@ -7,6 +7,8 @@ This implements users and posts.
 
 In my model posts and comments are the same kind of objects.
 
+UI is very limited - only thread list at this time.
+
 ## Testing
 
 Simply clone the ropository and run

@@ -1,0 +1,25 @@
+{
+  "name": "simpl-redd",
+  "description": "A simple reddit clone with TDD in mind",
+  "main": "server.js",
+  "authors": [
+    "Aleksey Malyshev"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AlekseyMalyshev/simpl-redd",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.5.0",
+    "angular": "~1.4.8",
+    "angular-ui-router": "ui-router#~0.2.15"
+  }
+}
