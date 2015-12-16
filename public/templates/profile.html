@@ -1,0 +1,36 @@
+<div ng-init="init()" class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <form role="form" ng-submit="save()">
+        <fieldset>
+          <div class="form-group">
+            <input type="email" ng-model="user.email" placeholder="Email address" required="required" autofocus="autofocus" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input type="text" ng-model="user.firstName" placeholder="First name" required="required" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input type="text" ng-model="user.lastName" placeholder="Last name" required="required" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Phone #" ng-model="user.phone" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="City" ng-model="user.city" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="State" ng-model="user.state" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-6">
+              <button type="reset" class="btn btn-md btn-primary btn-block"><i class="fa fa-times"></i> Cancel</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="submit" class="btn btn-md btn-success btn-block confirm"><i class="fa fa-check"></i> Save</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

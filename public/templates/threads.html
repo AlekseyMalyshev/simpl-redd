@@ -1,15 +1,35 @@
 <div ng-init="init()" class="container">
   <div class="row">
-    <div class="col-sm-12 threads" ng-repeat="post in threads">
-      <div class="title">{{post.title}}</div>
-      <div class="message">{{post.message}}</div>
+    <div class="col-sm-12">
+      <h3>Current discussion threads:</h3>
+      <div class="panel panel-info" ng-repeat="post in threads">
+        <div class="panel-heading redd-heading">
+          <a ui-sref="thread({headId: post._id})">
+            <h3 class="panel-title">{{post.title}}</h3>
+          </a>
+        </div>
+        <div class="panel-body redd-body">
+          <b>{{post.user.username}}</b>: 
+          {{post.message}}
+        </div>
+      </div>
     </div>
-    <div class="col-sm-12 newthread">
-      <form action="#" ng-submit="newthread($event, title, message)">
-        <div><input type="text" class="title" ng-model="title" placeholder="Thread title"></div>
-        <div><textarea class="thread-msg" ng-model="message" rows="3"></textarea></div>
-        <input type="submit" name="" value="Post">
+    <div class="col-sm-12" ng-show="isAuthenticated()">
+      <h3>Create a new discussion thread:</h3>
+      <form action="#" ng-submit="newthread($event)">
+        <div class="panel panel-default">
+          <div class="panel-heading redd-heading">
+            <h3 class="panel-title">
+              <input type="text" class="title" ng-model="title" placeholder="Thread title" required>
+            </h3>
+          </div>
+          <div class="panel-body redd-body">
+            <textarea class="thread-msg" ng-model="message" rows="3" placeholder="Type your message here" required></textarea>
+          </div>
+          <input type="submit" value="Post">
+        </div>
       </form>
     </div>
   </div>
 </div>
+

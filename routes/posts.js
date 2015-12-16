@@ -17,9 +17,10 @@ let checkError = (err, res, post) => {
 }
 
 // New post
-router.post('/', (req, res) => {
+router.post('/', auth.isAuth, (req, res) => {
   console.log('New post:', req.body);
   let post = new Post(req.body);
+  post.user = req.userId;
   if (!post.head) {
     post.head = post._id;
   }

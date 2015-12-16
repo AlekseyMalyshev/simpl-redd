@@ -69,7 +69,8 @@ router.post('/authenticate', (req, res) => {
           let token = doc.token();
           if (token) {
             res.setHeader('Authenticate', token);
-            res.send();
+            doc.password = null;
+            res.send(doc);
           }
           else {
             res.status(500).send();
@@ -105,7 +106,6 @@ router.put('/me', auth.isAuth, (req, res) => {
   else {
     let user = new User(req.body);
     user._id = req.userId;
-    console.log(user);
     user.encryptPass((err) => {
       if (err) {
         checkError(err, res);

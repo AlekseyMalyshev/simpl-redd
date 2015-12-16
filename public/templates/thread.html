@@ -1,15 +1,41 @@
 <div ng-init="init()" class="container">
   <div class="row">
-    <div class="col-sm-12 threads" ng-repeat="post in threads">
-      <div class="title">{{post.title}}</div>
-      <div class="message">{{post.message}}</div>
-    </div>
-    <div class="col-sm-12 newthread">
-      <form action="#" ng-submit="newthread($event, title, message, post._id)">
-        <div><input type="text" class="title" ng-model="title" placeholder="Thread title"></div>
-        <div><textarea class="thread-msg" ng-model="message" rows="3"></textarea></div>
-        <input type="submit" name="" value="Post">
-      </form>
+    <div class="col-sm-12">
+      <div class="panel panel-info">
+        <div class="panel-heading redd-heading">
+          <h3 class="panel-title">{{head.title}}</h3>
+        </div>
+        <div class="panel-body redd-body">
+          <b>{{head.user.username}}</b>: {{head.message}}
+          <div>
+            <a class="pull-right" href="">Reply</a>
+          </div>
+        </div>
+        <hr class="post-separator">
+        <div class="col-sm-12" ng-show="isAuthenticated()">
+          <form action="#" ng-submit="reply($event, head._id)">
+            <div class="panel panel-default">
+              <div class="panel-body redd-body">
+                <input type="text" class="title" ng-model="title" placeholder="Thread title (optional)">
+                <textarea class="thread-msg" ng-model="message" rows="3" placeholder="Type your message here" required></textarea>
+              </div>
+              <input type="submit" value="Post">
+            </div>
+          </form>
+        </div>
+        <div class="panel panel-default panel-inner" ng-repeat="post in thread">
+          <div class="panel-heading redd-heading" ng-show="post.title">
+            <h3 class="panel-title">{{post.title}}</h3>
+          </div>
+          <div class="panel-body redd-body">
+            <b>{{post.user.username}}</b>: {{post.message}}
+            <div>
+              <a class="pull-right" href="">Reply</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+

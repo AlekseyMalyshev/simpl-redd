@@ -1,21 +1,3 @@
-div.threads {
-  margin: 25px;
-  border: 1px solid #cccccc;
-}
-
-div.title {
-  background-color: #f0f0f0;
-  margin: 0;
-  width: 100%;
-}
-
-div.message {
-  width: 100%;
-}
-
-div.newthread {
-  width: 100%;
-}
 
 input.title {
   width: 100%;
@@ -25,3 +7,19 @@ textarea.thread-msg {
   width: 100%;
 }
 
+div.panel-inner {
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+
+hr.post-separator {
+  margin: 0;
+}
+
+div.redd-heading {
+  padding: 5px;
+}
+
+div.redd-body {
+  padding: 5px;
+}
